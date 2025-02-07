@@ -2,6 +2,10 @@
 
 This script allows you to manage your AWS EC2 instances using keywords defined in a mapping file. You can start, stop, list, and check the status of instances.
 
+## Problem
+
+To start, stop, or check the status of an EC2 instance that you regularly use, you have to follow multiple steps by going into your browser. Instead of that, you can do it in a single command from your CLI.
+
 ## Installation
 
 Please follow the installation steps in [INSTALL.md](./INSTALL.md) to set up the script.
