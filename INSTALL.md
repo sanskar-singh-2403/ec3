@@ -7,8 +7,8 @@ Follow these steps to install and set up the EC3 script:
    Clone the repository to your local machine:
 
    ```bash
-   git clone <repository_url>
-   cd <repository_directory>
+   git clone https://github.com/KartikSawant/ec3.git
+   cd ec3
    ```
 
 2. **Set AWS Profile (Optional)**
