@@ -47,7 +47,7 @@ Follow these steps to install and set up the EC3 script:
    Add lines in the following format:
 
    ```
-   <keyword>=<instance_id>:<region>
+   <alias>=<instance_id>:<region>
    ```
 
    Example:
@@ -70,7 +70,7 @@ Follow these steps to install and set up the EC3 script:
    You can now run the script to manage your EC2 instances from any directory:
 
    ```bash
-   ec3 <start|stop|list|status> [keyword]
+   ec3 <start|stop|list|status> [alias]
    ```
 
    Example:

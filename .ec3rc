@@ -1,2 +1,2 @@
-<instance-alias>=<instanceid>>:<aws-region>
-<instance-alias>=<instanceid>>:<aws-region>
+<alias>=<instance_id>:<region>
+<alias>=<instance_id>:<region>

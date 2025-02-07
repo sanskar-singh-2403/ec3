@@ -1,6 +1,6 @@
 # EC3 - Elastic compute cloud companion
 
-This script allows you to manage your AWS EC2 instances using keywords defined in a mapping file. You can start, stop, list, and check the status of instances.
+This script allows you to manage your AWS EC2 instances using aliases defined in a mapping file. You can start, stop, list, and check the status of instances.
 
 ## Problem
 
@@ -13,20 +13,20 @@ Please follow the installation steps in [INSTALL.md](./INSTALL.md) to set up the
 ## Usage
 
 ```bash
-ec3 <start|stop|list|status> [keyword]
+ec3 <start|stop|list|status> [alias]
 ```
 
-- `start`: Start the instance associated with the keyword.
-- `stop`: Stop the instance associated with the keyword.
+- `start`: Start the instance associated with the alias.
+- `stop`: Stop the instance associated with the alias.
 - `list`: List all instances defined in the mapping file.
-- `status`: Check the status of the instance associated with the keyword.
+- `status`: Check the status of the instance associated with the alias.
 
 ## Mapping File
 
 The mapping file (`~/.ec3rc`) should contain lines in the following format:
 
 ```
-<keyword>=<instance_id>:<region>
+<alias>=<instance_id>:<region>
 ```
 
 Example:

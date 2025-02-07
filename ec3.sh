@@ -7,17 +7,17 @@
 list_instances() {
     echo "Available instances:"
     cat "$map_file" | while read -r line; do
-        instance_keyword=$(echo "$line" | cut -d '=' -f1)
+        instance_alias=$(echo "$line" | cut -d '=' -f1)
         instance_info=$(echo "$line" | cut -d '=' -f2)
         instance_id=$(echo "$instance_info" | cut -d ':' -f1)
         region=$(echo "$instance_info" | cut -d ':' -f2)
-        echo "Keyword: $instance_keyword, Instance ID: $instance_id, Region: $region"
+        echo "Alias: $instance_alias, Instance ID: $instance_id, Region: $region"
     done
 }
 
 # Function to get instance info
 get_instance_info() {
-    instance_info=$(grep -w "^$keyword" "$map_file" | cut -d '=' -f2)
+    instance_info=$(grep -w "^$alias" "$map_file" | cut -d '=' -f2)
     instance_id=$(echo "$instance_info" | cut -d ':' -f1)
     region=$(echo "$instance_info" | cut -d ':' -f2)
 }
@@ -79,12 +79,12 @@ start_instance() {
 # Main script execution
 
 if [ -z "$1" ]; then
-    echo "Usage: $0 <start|stop|list|status> [keyword]"
+    echo "Usage: $0 <start|stop|list|status> [alias]"
     exit 1
 fi
 
 action="$1"
-keyword="$2"
+alias="$2"
 map_file="$HOME/.ec3rc"
 
 if [ ! -f "$map_file" ]; then
@@ -97,15 +97,15 @@ if [ "$action" == "list" ]; then
     exit 0
 fi
 
-if [ -z "$keyword" ]; then
-    echo "Usage: $0 <start|stop|list|status> [keyword]"
+if [ -z "$alias" ]; then
+    echo "Usage: $0 <start|stop|list|status> [alias]"
     exit 1
 fi
 
 get_instance_info
 
 if [ -z "$instance_id" ] || [ -z "$region" ]; then
-    echo "No instance or region found for keyword '$keyword'."
+    echo "No instance or region found for alias '$alias'."
     exit 1
 fi
 
